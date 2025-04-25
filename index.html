@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>مجيب’</title>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  <style>
+    body {
+      background-color: #457384;
+      font-family: Arial, sans-serif;
+      color: #333;
+      text-align: center;
+      padding-top: 100px;
+    }
+
+    .box {
+      background-color: wheat;
+      padding: 30px;
+      margin: auto;
+      width: 300px;
+      margin-top: 150px;
+      border-radius: 12px;
+      box-shadow: 0 4px 8px rgba(182, 19, 19, 0.1);
+    }
+
+    h1 {
+      color: #4a90e2;
+      font-size: 24px;
+    }
+
+    p {
+      font-size: 20px;
+      color: #555;
+      margin-top: auto;
+    }
+
+    h2 {
+      color: black;
+      font-size: 40px;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+  <div class="box">
+    <h1>موقع جامعة جازان</h1>
+    <p>أهلاً بكم في  
+      <strong>مُجيب</strong>
+    </p>
+
+    <h2> <i class="fas fa-robot"></i> </h2>
+  </div>
+
+
+  <script>
+    (function(){
+      if(!window.chatbase || window.chatbase("getState")!=="initialized"){
+        window.chatbase = (...arguments) => {
+          if(!window.chatbase.q){ window.chatbase.q = [] }
+          window.chatbase.q.push(arguments)
+        };
+        window.chatbase = new Proxy(window.chatbase, {
+          get(target, prop) {
+            if(prop === "q") { return target.q }
+            return (...args) => target(prop, ...args)
+          }
+        });
+      }
+
+      const onLoad = function() {
+        const script = document.createElement("script");
+        script.src = "https://www.chatbase.co/embed.min.js";
+        script.id = "F35t9OuVo3hZgrpDcb0if";
+        script.domain = "www.chatbase.co";
+        document.body.appendChild(script);
+      };
+
+      if(document.readyState === "complete"){
+        onLoad();
+      } else {
+        window.addEventListener("load", onLoad);
+      }
+    })();
+  </script>
+</body>
+</html>
